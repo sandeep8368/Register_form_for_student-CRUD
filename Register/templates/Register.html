@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" href="{% static 'css/Register.css'%}">
+    <title>Registration Form</title>
+    
+</head>
+<body>
+<div id = "FirstDiv">
+    <h1>Student Registration Form</h1>
+    <div id = "SecondDiv">
+        <form action="/submit" method= "post">
+            <h2 id = "FN">First Name <input type = "text" name = "First_Name"></h2>
+            <h2 id = "LN">Last Name <input type = "text" name ="Last_Name"></h2>
+            <h2 id = "EI">Email id  <input type = "text" name = "Email_id"> </h2>
+            <h2 id = "P">Password <input type = "text" name = "Password"></h2>
+            <h2 id = "PN">Phone no. <input type = "text" name = "Phone_No"></h2>
+            <h2 id = "G">Gender<h3>
+            <input type="radio" name="Gender" value="male" id="male"> <label for="male">Male</label>
+            <input type="radio" name="Gender" value= "female" id="female"> <label for="female">Female</label></h3>
+            <h2>Area of Interest
+            <h3>
+            Python<input type = "Checkbox" name = "Python" value = "Python">
+            Java<input type = "Checkbox" name = "Java" value = "Java">
+            C Lang<input type = "Checkbox" name = "C Lang" value = "C Lang">
+            Node js<input type = "Checkbox" name = "Node js" value = "Node js">
+            Mern<input type = "Checkbox" name = "Mern" value = "Mern">
+            </h3></h2>
+            <h1>{{msg}}</h1>
+            {% csrf_token %}
+            <input type="Submit">
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
